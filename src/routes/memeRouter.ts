@@ -5,10 +5,11 @@ import { memeSchema } from '../schemas/memeSchema';
 
 const memeRouter = Router();
 
-memeRouter.get('/memes', memeController.get);
-memeRouter.post('/memes',validateSchemaMiddleware(memeSchema),memeController.create);
-memeRouter.get('/memes', memeController.get);
-memeRouter.get('/memes', memeController.get);
-memeRouter.get('/memes', memeController.get);
+memeRouter.post('/creatememe', );
+memeRouter.post('/createuser',validateSchemaMiddleware(memeSchema),memeController.create);
+memeRouter.get('/user/:iduser', );
+memeRouter.get('/memes', );
+memeRouter.patch('/memes/:idmeme', );
+memeRouter.delete('/delete/:idmeme', );
 
 export default memeRouter;
