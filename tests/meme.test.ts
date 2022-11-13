@@ -15,7 +15,7 @@ describe('Testa rota POST /memes', () => {
     url: 'http://www.memesbrasil.com.br',
     title: 'Um novo meme da geração',
     description: 'Esse é um meme muito legal pq.....',
-    author: 'Xablau'
+    userId: 1
   };
 
   it('Cria um usuário e retorna status code 201', async () => {
