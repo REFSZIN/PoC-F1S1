@@ -1,6 +1,6 @@
-import { STATUS_CODE } from '../enums/statusCode';
+import { STATUS_CODE } from "../enums/statusCode";
 
-type AppErrorTypes = 'conflict' | 'not_found';
+type AppErrorTypes = "conflict" | "not_found";
 
 export interface AppError {
   type: AppErrorTypes;
@@ -12,7 +12,7 @@ export function isAppError(error: object): error is AppError {
 }
 
 export function errorTypeToStatusCode(type: AppErrorTypes) {
-  if (type === 'conflict') return STATUS_CODE.ERRORCONFLICT;
-  if (type === 'not_found') return STATUS_CODE.ERRORNOTFOUND;
+  if (type === "conflict") return STATUS_CODE.ERRORCONFLICT;
+  if (type === "not_found") return STATUS_CODE.ERRORNOTFOUND;
   return STATUS_CODE.ERRORBADREQUEST;
 }

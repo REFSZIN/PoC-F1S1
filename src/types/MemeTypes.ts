@@ -13,6 +13,6 @@ export type user = {
   password: string
 };
 
-export type TypeMemeData = Omit<memes, 'id'>;
-export type TypeUserData = Omit<user, 'id'>;
+export type TypeMemeData = Omit<memes, "id">;
+export type TypeUserData = Omit<user, "id">;
 export type UpdateMemeData = Partial<memes>;

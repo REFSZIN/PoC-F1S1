@@ -1,5 +1,5 @@
-import * as memeRepository from '../repositories/memeRepository';
-import { TypeMemeData } from '../types/MemeTypes';
+import * as memeRepository from "../repositories/memeRepository";
+import { TypeMemeData } from "../types/MemeTypes";
 
 export async function findAll() {
   const memes = await memeRepository.findAll();

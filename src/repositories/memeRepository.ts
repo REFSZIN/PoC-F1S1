@@ -1,5 +1,5 @@
-import { prisma } from '../database';
-import { TypeMemeData, UpdateMemeData } from '../types/MemeTypes';
+import { prisma } from "../database";
+import { TypeMemeData, UpdateMemeData } from "../types/MemeTypes";
 
 export async function findAll() {
   const result = await prisma.memes.findMany();
@@ -19,6 +19,6 @@ export async function update(id: number, meme: UpdateMemeData) {
   await prisma.memes.update({ where: { id }, data: meme });
 }
 
-async function remove(id: number) {
+export async function remove(id: number) {
   await prisma.memes.delete({ where: { id } });
 }

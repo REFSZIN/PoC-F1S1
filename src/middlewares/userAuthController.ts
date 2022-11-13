@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import * as memeService from '../services/memeService';
+import { Request, Response } from "express";
+import * as memeService from "../services/memeService";
 
 export async function get(req: Request, res: Response) {
   const memes = await memeService.findAll();
