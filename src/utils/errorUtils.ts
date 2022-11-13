@@ -1,4 +1,5 @@
 type AppErrorTypes = 'conflict' | 'not_found';
+
 export interface AppError {
   type: AppErrorTypes;
   message: string;

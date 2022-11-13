@@ -4,8 +4,8 @@ import { prisma } from '../src/database';
 
 // Describe = É usado para uma descrição da suite de teste que está sendo executada
 // it ou test = É usado para descrever cada etapa dos teste da suite
-
 // Será executado a cada it que estiver dentro do describe.
+
 beforeEach(async () => {
   await prisma.$executeRaw`TRUNCATE TABLE memes CASCADE`;
 });

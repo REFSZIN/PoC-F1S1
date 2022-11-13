@@ -5,6 +5,7 @@ import { errorHandlerMiddleware } from './middlewares/errorHandlerMiddleware';
 import memeRouter from './routes/memeRouter';
 
 const app = express();
+
 app.use(json());
 app.use(cors());
 app.use(memeRouter);

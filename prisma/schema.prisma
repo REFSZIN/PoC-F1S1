@@ -12,5 +12,11 @@ model memes {
   url         String
   title       String @unique
   description String
-  author      String
+  userId      Int
+}
+model users {
+  id          Int    @id @default(autoincrement())
+  name        String
+  email       String @unique
+  password    String
 }

@@ -1,9 +1,6 @@
 import { Request, Response } from 'express';
 import * as memeService from '../services/memeService';
 
-const nome: string = "Yan";
-const valor: number = 212;
-
 export async function get(req: Request, res: Response) {
   const memes = await memeService.findAll();
 
