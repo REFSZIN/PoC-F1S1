@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
-    // "target": "es6",  
-    // "module":"CommonJS",  
+    "target": "es2020",
+    "module": "commonjs",
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": false,
-    "skipLibCheck": true,
+    "rootDirs": ["src", "tests"],
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
   },
+  "include": ["src", "tests"]
 }
-
