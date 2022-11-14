@@ -4,7 +4,7 @@ export const memeSchema = Joi.object({
   url: Joi.string().uri().required(),
   title: Joi.string().required(),
   description: Joi.string().required(),
-  userId: Joi.string().required()
+  userId: Joi.number().required()
 });
 
 export const AuthSchema = Joi.object({
@@ -13,7 +13,7 @@ export const AuthSchema = Joi.object({
 });
 
 export const createUserSchema = Joi.object({
-  name: Joi.string().uri().required(),
+  name: Joi.string().required(),
   email: Joi.string().required(),
   password: Joi.string().required(),
 });

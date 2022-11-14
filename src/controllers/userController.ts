@@ -1,6 +1,14 @@
 import { Request, Response } from "express";
 import * as userService from "../services/userService";
 
+export async function login(req: Request, res: Response) {
+  const meme = req.body;
+
+  await userService;
+
+  res.sendStatus(201);
+}
+
 export async function getuser(req: Request, res: Response) {
   const memes = await userService;
 

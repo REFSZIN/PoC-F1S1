@@ -1,16 +1,29 @@
-import { Request, Response } from "express";
-import * as memeService from "../services/memeService";
+import jwt, { Secret, JwtPayload } from "jsonwebtoken";
+import { Request, Response, NextFunction } from "express";
+import { AuthSchema } from "../schemas/Schemas";
+import { STATUS_CODE } from "../enums/statusCode";
 
-export async function get(req: Request, res: Response) {
-  const memes = await memeService.findAll();
+export const SECRET_KEY: Secret = process.env.JWT_SECRET;
 
-  res.send(memes);
+export interface CustomRequest extends Request {
+  token: string | JwtPayload;
 }
 
-export async function create(req: Request, res: Response) {
-  const meme = req.body;
-
-  await memeService.insert(meme);
-
-  res.sendStatus(201);
+export function userAuthController(req: Request, res: Response, next: NextFunction) {
+  const validation = AuthSchema.validate(req.body);
+  if (validation.error) {
+    return res.status(STATUS_CODE.ERRORUNPROCESSABLEENTITY).send({ error: validation.error.message });
+  }
+  try {
+    const token = req.header("Authorization")?.replace("Bearer ", "");
+    if (!token) {
+      throw new Error();
+    }
+    const decoded = jwt.verify(token, SECRET_KEY);
+    (req as CustomRequest).token = decoded;
+    next();
+  } catch (err) {
+    res.status(STATUS_CODE.ERRORBADREQUEST).send("You needed auth");
+  }
 }
+

@@ -41,8 +41,6 @@ describe("Testa rota GET /memes", () => {
   });
 });
 
-describe("Testa rota PUT /memes", () => {});
-
 afterAll(async () => {
   await prisma.$disconnect();
 });

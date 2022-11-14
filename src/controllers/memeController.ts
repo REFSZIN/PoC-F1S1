@@ -14,3 +14,14 @@ export async function create(req: Request, res: Response) {
 
   res.sendStatus(201);
 }
+export async function delet(req: Request, res: Response) {
+  res.sendStatus(201);
+}
+
+export async function update(req: Request, res: Response) {
+  const patchmeme = req.body;
+
+  await memeService.insert(patchmeme);
+
+  res.sendStatus(201);
+}
