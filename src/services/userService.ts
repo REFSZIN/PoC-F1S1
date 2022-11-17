@@ -12,3 +12,4 @@ export async function insert(meme: TypeMemeData) {
     throw new Error("{ type: 'conflict', message: 'Memes must have unique titles' }");
   await memeRepository.insert(meme);
 }
+
